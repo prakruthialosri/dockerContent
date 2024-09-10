@@ -8,3 +8,14 @@ services:
  depends_on:
    - mongo
  restart: on-failure
+
+
+  mongo:
+ image: lerndevops/mongo
+ container_name: springboot-mongo
+ ports: # for demo/debug purpose only
+ - 27017:27017
+ volumes:
+ - /home/compose/data:/data/db
+ - /home/compose/data-bkp:/data/bkp
+ restart: always
